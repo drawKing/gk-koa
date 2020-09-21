@@ -28,6 +28,7 @@
     "koa-router": "^8.0.8",
     "koa-static": "^5.0.0",
     "koa-views": "^6.2.3",
+    "log4js": "^6.3.0",
     "node-mysql-promise": "^0.0.7",
     "reflect-metadata": "^0.1.13",
     "svg-captcha": "^1.4.0"
