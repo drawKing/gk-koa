@@ -4,13 +4,13 @@ const env = process.env.NODE_ENV; // 环境参数
 let MYSQL_CONF;
 let REDIS_CONF;
 
-if (env === 'dev') {
+if (env === 'development') {
     MYSQL_CONF = {
         host: 'localhost',
         user: 'root',
         password: 'yxghm1314',
         port: '3306',
-        database: 'myblog' // 数据库的名称
+        database: 'myblog', // 数据库的名称
     };
 
     REDIS_CONF = {

@@ -6,7 +6,6 @@ export default class ErrorHandlers {
             try {
                 await next();
             } catch (e) {
-                console.log(e, 'eeee');
                 // 错误日志记录
                 logger.error(e);
                 ctx.body = "500 请求，正在积极修复";

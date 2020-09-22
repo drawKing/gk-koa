@@ -1,21 +1,21 @@
 import {prefix, get, post, use} from '../decorator';
 import {checkLogin, getResponseData} from "../utils/util";
-import mysql from '../db/mysql';
+import LoginModel from "../models/LoginModel";
+
+const loginModel = new LoginModel();
 
 @prefix('/')
 export class LoginController {
     @get('/')
-    showIndex(ctx) {
-        ctx.body = 'hello page'
+    async showIndex(ctx) {
+        ctx.body = 'hello page';
     }
 
     @post('/login')
     async login(ctx) {
-        // TODO
-        const {username, password} = ctx.request.body;
-        const result = await mysql.table('users').where(`username = '${username}' AND password = '${password}'`).select();
+        const res = await loginModel.login(ctx);
 
-        ctx.body = 111;
+        ctx.body = getResponseData(!!res.length); // res.length > 0 代表查到此用户
     }
 
     @use([checkLogin]) // 可接收多个自定义中间件
