@@ -6,6 +6,7 @@ build/
 
 # dependencies
 /node_modules
+/logs
 
 # production
 /build
